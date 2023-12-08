@@ -431,7 +431,8 @@ class CandidateValuesPool(object):
                 if ex_value is None:
                     ex_value = "null"
                 elif quoted:
-                    ex_value = f'"{ex_value}"'
+                    ex_value = ex_value.replace('"', r'\"')
+                    ex_value = fr'"{ex_value}"'
                 examples_quoted.append(ex_value)
             fuzzable_values = examples_quoted + fuzzable_values
 

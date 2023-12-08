@@ -384,7 +384,7 @@ module SwaggerVisitors =
         let getArrayExamples (pv:JToken option) =
             match pv with
             | Some exv ->
-                let maxArrayElementsFromExample = 5
+                let maxArrayElementsFromExample = 45
                 exv.Children() |> seq
                 |> Seq.truncate maxArrayElementsFromExample
                 |> Some
