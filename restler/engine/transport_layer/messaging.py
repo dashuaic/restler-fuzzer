@@ -266,7 +266,7 @@ class HttpSock(object):
 
         def decode_buf (buf):
             try:
-                return buf.decode(UTF8)
+                return buf.decode(UTF8, "ignore")
             except Exception as ex:
                 if self.ignore_decoding_failures:
                     RAW_LOGGING(f'Failed to decode data due to {ex}. \
